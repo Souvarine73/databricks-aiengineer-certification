@@ -33,9 +33,12 @@ tickets = spark.table(f"{CATALOG}.{SCHEMA}.support_tickets")
 labels = '{"billing": "charges, refunds, invoices, VAT", "shipping": "delivery, tracking, damaged packages", "technical": "app errors, crashes, bugs"}'
 
 classified = (tickets
-    .withColumn("topic_raw", F.expr(f"""
-        ai_classify(body, '{labels}',
-                    map('version', '2.1', 'enableConfidenceScores', 'true'))"""))  # VARIANT
+    .withColumn(
+        "topic_raw", 
+        F.expr(
+            f"""ai_classify(body, '{labels}', map('version', '2.1', 'enableConfidenceScores', 'true'))"""
+        )
+    )  # VARIANT
     # Path de VARIANT: ':' entra, '.' baja, '[n]' indexa, '::' castea
     .withColumn("topic", F.expr("topic_raw:response[0].value::string"))
     .withColumn("confidence", F.expr("topic_raw:response[0].confidence_score::double"))
