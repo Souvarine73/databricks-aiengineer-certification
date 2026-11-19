@@ -39,3 +39,7 @@ result = (
 )
 
 display(result)
+
+# COMMAND ----------
+
+df.display()
