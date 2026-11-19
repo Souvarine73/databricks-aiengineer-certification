@@ -11,7 +11,7 @@ Una fila por apartado de `Databricks_GenAI_Engineer_Associate_Study_Notes.md`, e
 ## Proyecto (prácticas que van creciendo)
 | # | Práctica | Lecciones | Estado |
 |---|---|---|---|
-| P1 | Setup, Playground, `ai_query` | M01, M02 | ⬜ |
+| P1 | Setup, Playground, `ai_query` | M01, M02 | 🟡 |
 | P2 | Pipeline de documentos → chunks en Delta + CDF | RAG04 | ⬜ |
 | P3 | Retrieval: índice AI Search, modos de búsqueda, Genie Agent / Lakebase | RAG01, RAG06, RAG08 | ⬜ |
 | P4 | Tools: UC functions, MCP, Genie como tool, Unity Gateway | AGT01, DEP3·A | ⬜ |
@@ -26,16 +26,16 @@ Una fila por apartado de `Databricks_GenAI_Engineer_Associate_Study_Notes.md`, e
 ## M01 — Introduction to Generative AI (p. 3)
 | Apartado | Tipo | D | Teoría | Práctica | Quiz |
 |---|---|---|---|---|---|
-| A1–A3 What GenAI is, what it creates, use cases | 📘 | D1 | ⬜ | – | ⬜ |
-| B1 LLMs and foundation models | 📘 | D3 | ⬜ | – | ⬜ |
-| B2 From text to output | 📘 | D3 | ⬜ | ⬜ P1 | ⬜ |
-| C1 Proprietary API vs open-weight | 📘 | D3 | ⬜ | – | ⬜ |
-| C2 Choosing a model | 🛠️ | D3 | ⬜ | ⬜ (comparar en Playground) | ⬜ |
-| D1 Context engineering | 📘 | D1 | ⬜ | – | ⬜ |
-| D2 RAG (indexing / query) | 📘 | D1 | ⬜ | → P2/P3 | ⬜ |
-| D3 Model customization / fine-tuning | 📘 | D3 | ⬜ | – | ⬜ |
-| E1 Agents beyond RAG | 📘 | D1 | ⬜ | – | ⬜ |
-| Glosario | | | ⬜ | | |
+| A1–A3 What GenAI is, what it creates, use cases | 📘 | D1 | ✅ | – | ✅ |
+| B1 LLMs and foundation models | 📘 | D3 | ✅ | – | ✅ |
+| B2 From text to output | 📘 | D3 | ✅ | ✅ P1 | ✅ |
+| C1 Proprietary API vs open-weight | 📘 | D3 | ✅ | – | ✅ |
+| C2 Choosing a model | 🛠️ | D3 | ✅ | ✅ P1 (ai_query, 3 modelos) | ✅ |
+| D1 Context engineering | 📘 | D1 | ✅ | – | ✅ |
+| D2 RAG (indexing / query) | 📘 | D1 | ✅ | → P2/P3 | ✅ |
+| D3 Model customization / fine-tuning | 📘 | D3 | ✅ | – | ✅ |
+| E1 Agents beyond RAG | 📘 | D1 | ✅ | – | ✅ |
+| Glosario | | | ✅ | | |
 
 ## M02 — Finding Success with Generative AI (p. 12)
 | Apartado | Tipo | D | Teoría | Práctica | Quiz |
