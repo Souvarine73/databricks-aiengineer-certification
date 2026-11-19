@@ -40,8 +40,8 @@ Una fila por apartado de `Databricks_GenAI_Engineer_Associate_Study_Notes.md`, e
 ## M02 — Finding Success with Generative AI (p. 12)
 | Apartado | Tipo | D | Teoría | Práctica | Quiz |
 |---|---|---|---|---|---|
-| A1–A2 Data advantage, data-native architecture | 📘 | D1 | ⬜ | – | ⬜ |
-| B1 AI Functions | 🛠️ | D4 | ⬜ | ⬜ P1 | ⬜ |
+| A1–A2 Data advantage, data-native architecture | 📘 | D1 | ✅ | – | ✅ |
+| B1 AI Functions | 🛠️ FE ✅ | D4 | 🟡 | 🟡 P1 (ai_classify ✅; faltan ai_extract, ai_summarize, ai_translate, ai_mask) | ⬜ |
 | B2 Compound applications | 📘 | D1 | ⬜ | – | ⬜ |
 | B3–B4 Platform & components by stage | 📘 | D4 | ⬜ | – | ⬜ |
 | C1 Organizational shifts | 📘 | D1 | ⬜ | – | ⬜ |
