@@ -1,5 +1,14 @@
 # Progreso – Databricks GenAI Engineer Associate
 
+## ESTADO – 20-nov-2026 (sesión 3, modo teoría)
+Prácticas completadas: sin cambios (P1 sigue en curso 🟡; no se tocó el workspace).
+Lecciones cubiertas: sin cambios en coverage.md. Sesión de 6 preguntas sueltas de simulacro externo (capturas, preguntas 3–8 de un test de 45), todas acertadas.
+Recursos creados en el workspace (y si siguen activos): ninguno nuevo.
+Aciertos por dominio: D1 9/9 · D2 0/0 · D3 7/7 · D4 4/4 · D5 0/0 · D6 1/1
+Puntos débiles: ninguno por fallos. Temas **fuera de los apuntes** que cayeron y conviene verificar en docs.databricks.com: MLflow Prompt Registry (`prompts:/…@alias`, `to_single_brace_format()`), data profiling (`MonitorInferenceLog` / `MonitorTimeSeries` / `MonitorSnapshot`), `VectorSearchRetrieverTool`, `mlflow.models.set_retriever_schema`, `RunnableParallel` para devolver fuentes.
+Siguiente paso recomendado: volver a práctica: ejecutar el paso 3 de `04_ai_functions` (`ai_extract`), seguir con ai_summarize, ai_translate, ai_mask y cerrar M02 · B1.
+Notas de procedimiento: en modo teoría las preguntas llegan como capturas; el procedimiento está en CLAUDE.md (explicar cada opción sin revelar, referencia a apuntes o "no aparece", preguntas guía).
+
 ## ESTADO – 19-nov-2026 (sesión 2)
 Prácticas completadas: P1 en curso (🟡). Notebook `04_ai_functions`: paso 1 tabla `support_tickets` ✅ · paso 2 `ai_classify` v2.1 ✅ · paso 3 `ai_extract` escrito pero sin ejecutar. Faltan ai_extract, ai_summarize, ai_translate, ai_mask.
 Lecciones cubiertas: M01 completa. M02: briefing ✅, A1–A2 ✅ (teoría + quiz), B1 🟡.
