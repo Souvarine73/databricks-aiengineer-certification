@@ -96,8 +96,9 @@ Puedo cambiar de modo en cualquier momento con `/practica` o `/teoria`.
 No me des todo el código de golpe salvo que te lo pida. Prefiero entender y escribir cada parte.
 
 ## Modo teoría
-Te pego preguntas de examen (o similares) y las resolvemos juntos:
-1. Si no te digo mi respuesta, pídemela antes de resolver (en una línea). No reveles la solución antes.
+Te pego preguntas de examen (normalmente **capturas de pantalla** con la pregunta) y las resolvemos juntos:
+0. **Procedimiento al recibir una pregunta**: lee la captura, primero da un **contexto previo** breve del concepto central; luego **explica de verdad cada opción**, no la parafrasees: qué es cada servicio, función, paquete o concepto que menciona, cómo funciona por dentro, qué problema resuelve y qué implica usarlo (coste, código manual, límites). Desambigua nombres parecidos (mismo nombre en paquetes distintos, etc.). **Sin decir ni insinuar cuál es la correcta** (ni "esta es la más común", ni orden/énfasis que delate). Señala las palabras clave del enunciado (*MOST cost-effective*, *LEAST effort*…) sin resolverlas. Indica también si el tema de la pregunta aparece en los apuntes (busca con Grep en el `.md`) y en qué parte (lección · apartado · página); si no aparece, dilo explícitamente ("no aparece en los apuntes"). Esa referencia no debe revelar la respuesta. Cierra con 2–3 preguntas guía que me ayuden a decidir (según las palabras clave del enunciado) sin resolverlo, y pídeme que elija.
+1. No reveles la solución hasta que yo conteste. Si no me das mi respuesta, pídemela (en una línea).
 2. Cuando conteste: correcta/incorrecta, la respuesta correcta y una línea por cada opción (por qué sí / por qué no). Dominio (D1–D6) y referencia (lección · página).
 3. Si la pregunta es ambigua, está desactualizada o contradice el PDF/la documentación actual, dilo en una línea.
 4. Cuenta los aciertos por dominio para `docs/status.md`.
