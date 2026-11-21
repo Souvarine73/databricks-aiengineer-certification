@@ -1,5 +1,22 @@
 # Progreso – Databricks GenAI Engineer Associate
 
+## ESTADO – 21-nov-2026 (sesión 4, modo práctica)
+Prácticas completadas: P1 en curso (🟡). Notebook `04_ai_functions` completo: ai_classify, ai_extract (v2.1, con `description` en el campo `language` para evitar nulls), ai_summarize, ai_translate, ai_mask.
+Lecciones cubiertas: M02 A1–D1 completo (B1 AI Functions, B2 Compound, B3–B4 Platform, C1 Organizational shifts, D1 Roadmap). Falta M02 · E1 (seguridad, D5) y el cierre de lección (glosario + quiz de 5). P1 sigue 🟡 hasta cerrar M02.
+Recursos creados en el workspace (y si siguen activos): ninguno nuevo (schema, volume y support_tickets se mantienen, sin coste).
+Aciertos por dominio: D1 16/18 · D2 1/1 · D3 8/8 · D4 5/5 · D5 1/1 · D6 1/1
+Puntos débiles: **no-code vs code-first** (Genie / Agent Bricks vs Agent Framework): fallé dos en B3 y luego acerté la repregunta. Repasar en `/repaso`.
+Notas técnicas: ai_extract devuelve `null` si el dato no está literal; mejorar la `description` del schema. Confundió tracking number con order_id (también depende de la description). En los apuntes, B3 pone Serving endpoints en etapa 4 y B4 pone Model Serving en etapa 3 (inconsistencia). Pendiente verificar en docs.databricks.com la firma y los idiomas de `ai_summarize` (max_words, por defecto 50) y `ai_translate`.
+Siguiente paso recomendado: M02 · E1 (Data leakage, prompt injection, misuse, D5), cierre de M02 con `/glosario` + quiz, y pasar a RAG01. Repregunta de no-code vs code-first.
+
+## ESTADO – 20-nov-2026 (sesión 3, cierre, modo teoría)
+Prácticas completadas: sin cambios (P1 sigue en curso 🟡; no se tocó el workspace).
+Lecciones cubiertas: sin cambios en coverage.md. Preguntas 9–10 del simulacro externo, ambas acertadas (P9 Supervisor Agent: Examples/Guidelines + descripciones; P10 clasificación con `ai_query` en ingesta + cuarentena). Se dio un ejemplo PySpark del patrón P10 (`ai_query` batch → quarantine/cleared).
+Recursos creados en el workspace (y si siguen activos): ninguno nuevo.
+Aciertos por dominio: D1 10/10 · D2 1/1 · D3 8/8 · D4 4/4 · D5 0/0 · D6 1/1
+Puntos débiles: ninguno por fallos. Dudoso de sintaxis resuelto: `concat('{prompt}', substr(text,1,4000))` dentro de `F.expr` (f-string lo resuelve Python, `text` lo resuelve Spark). Fuera de los apuntes: patrón de cuarentena con sign-off humano.
+Siguiente paso recomendado: volver a práctica: ejecutar el paso 3 de `04_ai_functions` (`ai_extract`), seguir con ai_summarize, ai_translate, ai_mask y cerrar M02 · B1.
+
 ## ESTADO – 20-nov-2026 (sesión 3, modo teoría)
 Prácticas completadas: sin cambios (P1 sigue en curso 🟡; no se tocó el workspace).
 Lecciones cubiertas: sin cambios en coverage.md. Sesión de 6 preguntas sueltas de simulacro externo (capturas, preguntas 3–8 de un test de 45), todas acertadas.
