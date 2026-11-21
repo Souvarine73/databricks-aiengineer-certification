@@ -52,9 +52,48 @@ display(classified.select("ticket_id", "body", "topic", "confidence", "topic_raw
 # Paso 3 · ai_extract v2.1 (PENDIENTE: siguiente sesión)
 schema = ('{"order_id": {"type": "string", "description": "order number, without #"}, '
           '"amount": {"type": "number", "description": "money amount mentioned, if any"}, '
-          '"language": {"type": "enum", "labels": ["en", "es", "other"]}}')
+          '"language": {"type": "enum", "labels": ["en", "es", "other"], "description": "language the ticket text is written in; always infer it, never leave empty"}}')
 
-extracted = classified.withColumn("extract_raw", F.expr(f"ai_extract(body, '{schema}', map('version', '2.1'))"))
+extracted = (
+    classified
+    .withColumn(
+        "extract_raw", 
+        F.expr(
+            f"ai_extract(body, '{schema}', map('version', '2.1'))"
+        )
+    )
+)
 
 # Primero ver la forma real del VARIANT, luego escribir los paths
 display(extracted.select("ticket_id", "body", "extract_raw"))
+
+parsed = (extracted
+    .withColumn("order_id", F.expr("extract_raw:response.order_id.value::string"))
+    .withColumn("amount",   F.expr("extract_raw:response.amount.value::double"))
+    .withColumn("language", F.expr("extract_raw:response.language.value::string"))
+)
+display(parsed.select("ticket_id", "order_id", "amount", "language"))
+
+# COMMAND ----------
+
+summarized = (
+    tickets
+    .withColumn("summary", F.expr("ai_summarize(body, 10)"))  # resumen de máx. ~10 palabras
+)
+display(summarized.select("ticket_id", "body", "summary"))
+
+# COMMAND ----------
+
+translated = (
+    tickets
+    .withColumn("body_en", F.expr("ai_translate(body, 'en')"))
+)
+display(translated.select("ticket_id", "body", "body_en"))
+
+# COMMAND ----------
+
+masked = (
+    tickets
+    .withColumn("body_masked", F.expr("ai_mask(body, array('email', 'phone'))"))
+)
+display(masked.select("ticket_id", "body", "body_masked"))
