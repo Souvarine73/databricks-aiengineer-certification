@@ -11,7 +11,7 @@ Una fila por apartado de `Databricks_GenAI_Engineer_Associate_Study_Notes.md`, e
 ## Proyecto (prácticas que van creciendo)
 | # | Práctica | Lecciones | Estado |
 |---|---|---|---|
-| P1 | Setup, Playground, `ai_query` | M01, M02 | 🟡 |
+| P1 | Setup, Playground, `ai_query` | M01, M02 | ✅ |
 | P2 | Pipeline de documentos → chunks en Delta + CDF | RAG04 | ⬜ |
 | P3 | Retrieval: índice AI Search, modos de búsqueda, Genie Agent / Lakebase | RAG01, RAG06, RAG08 | ⬜ |
 | P4 | Tools: UC functions, MCP, Genie como tool, Unity Gateway | AGT01, DEP3·A | ⬜ |
@@ -46,23 +46,23 @@ Una fila por apartado de `Databricks_GenAI_Engineer_Associate_Study_Notes.md`, e
 | B3–B4 Platform & components by stage | 📘 | D4 | ✅ | – | ✅ |
 | C1 Organizational shifts | 📘 | D1 | ✅ | – | ✅ |
 | D1 Adoption roadmap | 📘 | D1 | ✅ | – | ✅ |
-| E1 Data leakage, prompt injection, misuse | 📘 | D5 | ⬜ | – | ⬜ |
-| E2 Defense in depth | 📘 | D5 | ⬜ | – | ⬜ |
-| E3 Unity Gateway | 📘 | D6 | ⬜ | → P4 | ⬜ |
-| F1 Evaluation & LLM-as-judge | 📘 | D6 | ⬜ | → P7 | ⬜ |
-| Glosario | | | ⬜ | | |
+| E1 Data leakage, prompt injection, misuse | 📘 | D5 | ✅ | – | ✅ |
+| E2 Defense in depth | 📘 | D5 | ✅ | – | ✅ |
+| E3 Unity Gateway | 📘 | D6 | ✅ | → P4 | ✅ |
+| F1 Evaluation & LLM-as-judge | 📘 | D6 | ✅ | → P7 | ✅ |
+| Glosario | | | ✅ | | |
 
 ## RAG01 — Retrieval Agents and Lakebase Search (p. 24)
 | Apartado | Tipo | D | Teoría | Práctica | Quiz |
 |---|---|---|---|---|---|
-| A1–A2 Why retrieval agents, retrieval pipeline | 📘 | D1 | ⬜ | – | ⬜ |
-| B1 Prompt → context → harness engineering | 📘 | D1 | ⬜ | – | ⬜ |
-| C1 Genie Agents: attach a volume | 🛠️ FE ❓ | D3 | ⬜ | ⬜ P3 | ⬜ |
-| C2 Knowledge source types | 📘 | D2 | ⬜ | – | ⬜ |
-| C3 Declarative vs code-first | 📘 | D1 | ⬜ | – | ⬜ |
-| D Lakebase | 📘 | D4 | ⬜ | – | ⬜ |
-| E/E1 Lakebase Search modes | 🛠️ FE ❓ | D4 | ⬜ | ⬜ P3 | ⬜ |
-| Glosario | | | ⬜ | | |
+| A1–A2 Why retrieval agents, retrieval pipeline | 📘 | D1 | ✅ | – | ✅ |
+| B1 Prompt → context → harness engineering | 📘 | D1 | ✅ | – | ✅ |
+| C1 Genie Agents: attach a volume | 🛠️ FE ❓ | D3 | ✅ | ⬜ P3 | 🟡 (falló Chat vs Agent mode) |
+| C2 Knowledge source types | 📘 | D2 | ✅ | – | ✅ |
+| C3 Declarative vs code-first | 📘 | D1 | ✅ | – | ✅ |
+| D Lakebase | 📘 | D4 | ✅ | – | 🟡 (sin pregunta directa) |
+| E/E1 Lakebase Search modes | 🛠️ FE ❓ | D4 | ✅ | ⬜ P3 | ✅ (falló 1ª, acertó repregunta) |
+| Glosario | | | ✅ | | |
 
 ## RAG04 — Document Parsing and Chunking (p. 33)
 | Apartado | Tipo | D | Teoría | Práctica | Quiz |

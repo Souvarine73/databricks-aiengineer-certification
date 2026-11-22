@@ -1,5 +1,13 @@
 # Progreso – Databricks GenAI Engineer Associate
 
+## ESTADO – 22-nov-2026 (sesión 6, modo práctica/lección M02 + RAG01)
+Prácticas completadas: **P1 ✅** (schema, volume, `ai_query`, 3 modelos, AI Functions).
+Lecciones cubiertas: **M01, M02 y RAG01 completas** en teoría + glosario + quiz de cierre (M02 5/5, RAG01 4/5). Las prácticas de RAG01 (C1 Genie Agent, E1 Lakebase Search) quedan para P3.
+Recursos creados en el workspace (y si siguen activos): ninguno nuevo (schema, volume y support_tickets se mantienen, sin coste).
+Aciertos por dominio: D1 25/27 · D2 3/3 · D3 8/9 · D4 9/10 · D5 4/4 · D6 4/4
+Puntos débiles: (1) **Genie Chat vs Agent mode**: estructurados en ambos, no estructurados (PDF en Volumes) solo en Agent mode. (2) **Elegir modo Lakebase Search**: significado + término exacto + JOIN = hybrid (fallé keyword-only, acerté la repregunta). (3) no-code vs code-first: acertado en RAG01, mantener en `/repaso`. Nota: DASF es marco/catálogo de riesgos, no control en runtime. Pendiente de verificar en docs: judge Correctness y ground truth (EVAL2.1); disponibilidad de Genie Agents y Lakebase en Free Edition (antes de P3).
+Siguiente paso recomendado: RAG04 (Document Parsing and Chunking, p. 33) y P2. Mini-simulacro tras 3–4 lecciones (tras RAG06).
+
 ## ESTADO – 22-nov-2026 (sesión 5, modo teoría)
 Prácticas completadas: sin cambios (P1 sigue 🟡; no se tocó el workspace).
 Lecciones cubiertas: sin cambios en coverage.md (M02 · E1–F1 y cierre de lección siguen pendientes). Repregunta de no-code vs code-first (Genie Agent vs Agent Framework) acertada. Preguntas 11–13 del simulacro externo, todas acertadas.
