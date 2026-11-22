@@ -12,7 +12,7 @@ Una fila por apartado de `Databricks_GenAI_Engineer_Associate_Study_Notes.md`, e
 | # | Práctica | Lecciones | Estado |
 |---|---|---|---|
 | P1 | Setup, Playground, `ai_query` | M01, M02 | ✅ |
-| P2 | Pipeline de documentos → chunks en Delta + CDF | RAG04 | ⬜ |
+| P2 | Pipeline de documentos → chunks en Delta + CDF | RAG04 | 🟡 (parse, classify, extract y prueba de `ai_prep_search` hechos; falta tabla `chunks` + CDF) |
 | P3 | Retrieval: índice AI Search, modos de búsqueda, Genie Agent / Lakebase | RAG01, RAG06, RAG08 | ⬜ |
 | P4 | Tools: UC functions, MCP, Genie como tool, Unity Gateway | AGT01, DEP3·A | ⬜ |
 | P5 | Agente con frameworks + orquestación + multi-agente + tracing | AGT04, DEP3·B | ⬜ |
@@ -67,14 +67,14 @@ Una fila por apartado de `Databricks_GenAI_Engineer_Associate_Study_Notes.md`, e
 ## RAG04 — Document Parsing and Chunking (p. 33)
 | Apartado | Tipo | D | Teoría | Práctica | Quiz |
 |---|---|---|---|---|---|
-| A1 Document processing pipeline | 📘 | D2 | ⬜ | – | ⬜ |
-| B1 `ai_parse_document` | 🛠️ FE ✅ | D2 | ⬜ | ⬜ P2 | ⬜ |
-| C `variant_explode` | 🛠️ | D2 | ⬜ | ⬜ P2 | ⬜ |
-| C1 `ai_classify` | 🛠️ | D2 | ⬜ | ⬜ P2 | ⬜ |
-| C2 `ai_extract` | 🛠️ | D2 | ⬜ | ⬜ P2 | ⬜ |
-| D1 `ai_prep_search` | 🛠️ FE ❓ | D2 | ⬜ | ⬜ P2 | ⬜ |
-| D2 Chunking strategy | 📘 | D2 | ⬜ | – | ⬜ |
-| D3 Embed vs retrieve columns | 📘 | D2 | ⬜ | ⬜ P2 | ⬜ |
+| A1 Document processing pipeline | 📘 | D2 | ✅ | – | ⬜ |
+| B1 `ai_parse_document` | 🛠️ FE ✅ | D2 | ✅ | ✅ P2 (v2.0, `doc_elements`) | ⬜ |
+| C `variant_explode` | 🛠️ | D2 | ✅ | 🟡 P2 (usado `posexplode`; `variant_explode` en LATERAL solo en teoría) | ⬜ |
+| C1 `ai_classify` | 🛠️ | D2 | ✅ | ✅ P2 (v2.1, por documento) | ⬜ |
+| C2 `ai_extract` | 🛠️ | D2 | ✅ | ✅ P2 (v2.1, `invoice_fields`) | ⬜ |
+| D1 `ai_prep_search` | 🛠️ FE ✅ (Beta, DBR 18.2+) | D2 | ✅ | ✅ P2 (probado; 2 chunks en el manual) | ⬜ |
+| D2 Chunking strategy | 📘 | D2 | 🟡 (granularidad vista; overlap y límites por cerrar) | – | ⬜ |
+| D3 Embed vs retrieve columns | 📘 | D2 | 🟡 (visto en la salida real) | ⬜ P2 (tabla `chunks`) | ⬜ |
 | E1 Creating an index | 🛠️ FE ❓ | D4 | ⬜ | ⬜ P3 | ⬜ |
 | E2 Sync with Change Data Feed | 🛠️ | D2 | ⬜ | ⬜ P2 | ⬜ |
 | F Other AI SQL Functions | 📘 | D4 | ⬜ | – | ⬜ |

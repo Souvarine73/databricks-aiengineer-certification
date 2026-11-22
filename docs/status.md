@@ -1,5 +1,21 @@
 # Progreso – Databricks GenAI Engineer Associate
 
+## ESTADO – 22-nov-2026 (sesión 7, modo práctica / RAG04 + P2)
+Prácticas completadas: **P2 en curso (🟡)**. Notebooks en `src/p2_document_pipeline/`: `01_parse_documents` (leer PDFs `binaryFile` → `ai_parse_document` v2.0 → filtrar ruido → `doc_elements`) y `02_classify_extract` (`ai_classify` v2.1 por documento → `doc_classified`; `ai_extract` v2.1 sobre invoices → `invoice_fields`). `03_chunk` solo con la prueba de `ai_prep_search` (sin tabla `chunks` aún).
+Lecciones cubiertas: RAG04 en curso. Teoría + práctica hechas: A1, B1, C (`variant_explode`), C1, C2, D1. Parciales: D2 (granularidad, discutido sin cerrar), D3 (visto en la salida real). Pendientes: E1 (→ P3), E2 (CDF), F, quiz y glosario. Sin preguntas de quiz en la sesión.
+Recursos creados en el workspace (y si siguen activos): PDFs `aquapure_3000_manual.pdf` e `invoice_INV-2026-0457.pdf` en la raíz del volume `workspace.genai_cert.docs`; tablas `parsed_docs`, `doc_elements`, `invoice_fields` y, por confirmar, `doc_classified`. Todo sin coste, se mantiene.
+Aciertos por dominio: D1 25/27 · D2 3/3 · D3 8/9 · D4 9/10 · D5 4/4 · D6 4/4 (sin cambios)
+Puntos débiles: ninguno por fallos. Repaso de RAG01 (Genie Chat vs Agent mode) propuesto al inicio, sin respuesta.
+Notas técnicas:
+- `variant_explode` es una *table-valued function*: solo va en `FROM`/`LATERAL`, no en `select(F.expr(...))` (da `UNRESOLVED_ROUTINE`). En PySpark: `F.explode`/`F.posexplode` sobre `variant_get(col, '$.document.elements', 'array<variant>')`.
+- `ai_parse_document` v2.0: cada elemento tiene `type` (`page_header`, `title`, `section_header`, `text`, `table`, `page_footer`, `page_number`), `content` (las tablas salen como HTML), `bbox`, `confidence`, `description`, `id`. Hay que filtrar `page_header`/`page_footer`/`page_number` como ruido (manual 30 → 21 elementos; invoice 9 → 6).
+- Routing: `ai_classify` sobre el texto completo del documento (elementos unidos y ordenados por `pos`) dio manual → `user_manual` 0.85, invoice → `invoice` 0.94. `ai_extract` v2.1 devolvió los 5 campos correctos del invoice, con `total_due` numérico.
+- **`ai_prep_search` funciona en Free Edition ✅** (serverless). Doc oficial: firma `ai_prep_search(parsed [, options])`, `parsed` = VARIANT de `ai_parse_document` o STRING; `options` documenta `version` y `schema`; devuelve VARIANT, 1 fila por documento, chunks en `document.contents`; **Beta**, requiere DBR 18.2+. Cada chunk: `chunk_id`, `chunk_position`, `chunk_to_embed` (con cabecera de metadatos, resumen de tablas y "Related questions" generadas), `chunk_to_retrieve`, `pages`.
+- Resultado real con el manual (3 págs.): solo **2 chunks**; el chunk 0 es grande (secciones 1–7, ~1000 tokens estimados) y el corte cae **dentro de una tabla** (HTML roto al inicio del chunk 1); una línea corrupta en los metadatos de `chunk_to_embed`. La doc no explica cómo decide el tamaño ni da parámetro para controlarlo (por verificar el listado completo de `options`). Los apuntes dicen "semantic boundaries"; la salida no encaja del todo.
+- `gte-large-en` admite hasta 8192 tokens según la doc de GTE (los 512 de los apuntes son solo un ejemplo): el chunk 0 no se trunca, pero es poco granular.
+- Convención de código añadida a CLAUDE.md: un notebook por etapa, resultado en tabla Delta, ruta exacta del archivo en cada paso, solo la versión válida del código.
+Siguiente paso recomendado: (1) confirmar que `doc_classified` existe; (2) medir los chunks (`F.length` de `chunk_to_retrieve`/`chunk_to_embed`); (3) paso 8: tabla `chunks` con `doc_type` + CDF (`ALTER TABLE … delta.enableChangeDataFeed = true`); (4) decidir si añadimos un chunking propio por `section_header` para comparar estrategias (D2); (5) cerrar RAG04 con quiz y `/glosario`. Índice AI Search (E1) en P3.
+
 ## ESTADO – 22-nov-2026 (sesión 6, modo práctica/lección M02 + RAG01)
 Prácticas completadas: **P1 ✅** (schema, volume, `ai_query`, 3 modelos, AI Functions).
 Lecciones cubiertas: **M01, M02 y RAG01 completas** en teoría + glosario + quiz de cierre (M02 5/5, RAG01 4/5). Las prácticas de RAG01 (C1 Genie Agent, E1 Lakebase Search) quedan para P3.
