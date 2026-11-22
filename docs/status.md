@@ -1,5 +1,14 @@
 # Progreso – Databricks GenAI Engineer Associate
 
+## ESTADO – 22-nov-2026 (sesión 5, modo teoría)
+Prácticas completadas: sin cambios (P1 sigue 🟡; no se tocó el workspace).
+Lecciones cubiertas: sin cambios en coverage.md (M02 · E1–F1 y cierre de lección siguen pendientes). Repregunta de no-code vs code-first (Genie Agent vs Agent Framework) acertada. Preguntas 11–13 del simulacro externo, todas acertadas.
+Recursos creados en el workspace (y si siguen activos): ninguno nuevo.
+Aciertos por dominio: D1 17/19 · D2 2/2 · D3 8/8 · D4 7/7 · D5 1/1 · D6 1/1
+Puntos débiles: no-code vs code-first (repregunta acertada, mantener en `/repaso`). Conceptos nuevos a consolidar, **fuera de los apuntes** (verificar en docs.databricks.com): `resources` en `mlflow.pyfunc.log_model` (`DatabricksVectorSearchIndex`, `DatabricksServingEndpoint`) y automatic authentication passthrough (valida permisos al desplegar, service principal efímera) vs OBO `UserAuthPolicy` (valida por petición); MLflow Prompt Registry (versión inmutable vs alias mutable, `set_prompt_alias` para rollback inmediato, `register_prompt` no mueve alias).
+Notas técnicas: Delta Sync index TRIGGERED → `VectorSearchClient().get_index(endpoint_name, index_name).sync()` como última tarea del job (`depends_on` la escritura de chunks); CDF es requisito previo, no sincroniza solo. `pipeline_type` se fija al crear el índice (por confirmar en la doc). Firmas de `get_index` y `log_model(name=...)` por verificar.
+Siguiente paso recomendado: volver a modo práctica/teoría con M02 · E1 (Data leakage, prompt injection, misuse; D5), cierre de M02 con `/glosario` + quiz, y pasar a RAG01.
+
 ## ESTADO – 21-nov-2026 (sesión 4, modo práctica)
 Prácticas completadas: P1 en curso (🟡). Notebook `04_ai_functions` completo: ai_classify, ai_extract (v2.1, con `description` en el campo `language` para evitar nulls), ai_summarize, ai_translate, ai_mask.
 Lecciones cubiertas: M02 A1–D1 completo (B1 AI Functions, B2 Compound, B3–B4 Platform, C1 Organizational shifts, D1 Roadmap). Falta M02 · E1 (seguridad, D5) y el cierre de lección (glosario + quiz de 5). P1 sigue 🟡 hasta cerrar M02.
