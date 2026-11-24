@@ -1,5 +1,13 @@
 # Progreso – Databricks GenAI Engineer Associate
 
+## ESTADO – 24-nov-2026 (sesión 8, modo teoría)
+Prácticas completadas: sin cambios (P2 sigue 🟡; no se tocó el workspace).
+Lecciones cubiertas: sin cambios en coverage.md. Repaso Genie Chat vs Agent mode acertado (PDFs en Volume → Agent mode). Preguntas 18–20 del simulacro externo, todas acertadas (P18 tracing: `@mlflow.trace` + `mlflow.langchain.autolog()`, a la 2ª tras acertar solo A; P19 tools para datos vivos/dependientes del usuario; P20 `ResponsesAgent`).
+Recursos creados en el workspace (y si siguen activos): ninguno nuevo.
+Aciertos por dominio: D1 26/28 · D2 3/3 · D3 8/9 · D4 10/11 · D5 4/4 · D6 5/5
+Puntos débiles: ninguno por fallos. En "Choose TWO" leer cuántas piden. Fuera de los apuntes (verificar en docs.databricks.com): `ChatAgent` como interfaz anterior frente a `ResponsesAgent`; jerarquía padre/hijo de spans (función envolvente con `@mlflow.trace` o `mlflow.start_span()`).
+Siguiente paso recomendado: volver a RAG04 · P2: medir chunks, paso 8 (tabla `chunks` con `doc_type` + CDF), decidir chunking propio por `section_header`, quiz y `/glosario`.
+
 ## ESTADO – 22-nov-2026 (sesión 7, modo práctica / RAG04 + P2)
 Prácticas completadas: **P2 en curso (🟡)**. Notebooks en `src/p2_document_pipeline/`: `01_parse_documents` (leer PDFs `binaryFile` → `ai_parse_document` v2.0 → filtrar ruido → `doc_elements`) y `02_classify_extract` (`ai_classify` v2.1 por documento → `doc_classified`; `ai_extract` v2.1 sobre invoices → `invoice_fields`). `03_chunk` solo con la prueba de `ai_prep_search` (sin tabla `chunks` aún).
 Lecciones cubiertas: RAG04 en curso. Teoría + práctica hechas: A1, B1, C (`variant_explode`), C1, C2, D1. Parciales: D2 (granularidad, discutido sin cerrar), D3 (visto en la salida real). Pendientes: E1 (→ P3), E2 (CDF), F, quiz y glosario. Sin preguntas de quiz en la sesión.
