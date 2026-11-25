@@ -1,5 +1,14 @@
 # Progreso – Databricks GenAI Engineer Associate
 
+## ESTADO – 25-nov-2026 (sesión 9, modo teoría)
+Prácticas completadas: sin cambios (P2 sigue 🟡; no se tocó el workspace).
+Lecciones cubiertas: sin cambios en coverage.md. Preguntas 21–25 del simulacro externo: P23 (information extraction) y P24 (`ai_extract` + `ai_classify`) acertadas; P21 (bot de Slack → handler + service principal OAuth) no la sabía; P22 (dashboard on-call) acertó solo B, faltó C; P25 (migración a AI Gateway inference tables) cuenta como fallo a petición: no la sabía, acertó B y D deduciendo con ayuda.
+Recursos creados en el workspace (y si siguen activos): ninguno nuevo.
+Aciertos por dominio: D1 27/29 · D2 4/4 · D3 8/9 · D4 10/12 · D5 4/4 · D6 5/7
+Puntos débiles: (1) **Sistema externo ↔ agent endpoint**: servidor intermedio + service principal, nunca PAT personal. (2) **Provisioned throughput en on-call**: latencia p95 + `429` como saturación; en "Choose TWO" deducir las señales de la arquitectura aunque no se nombren. (3) **Inference tables, generaciones y migración**: desactivar legacy → activar AI Gateway, schema distinto, sin backfill ni rollback; columnas `execution_duration_ms` (AI Gateway en serving endpoints, legacy) vs `latency_ms` (Unity Gateway).
+Notas: temas **fuera de los apuntes** (P21, P25, esquemas de columnas y `system.serving.endpoint_usage`). Por verificar: Socket Mode en Databricks Apps; estructura JSON y columna `execution_time_ms` de `auto_capture_config` (dadas de memoria).
+Siguiente paso recomendado: repasar los 3 puntos débiles; volver a RAG04 · P2: medir chunks, paso 8 (tabla `chunks` con `doc_type` + CDF), decidir chunking propio por `section_header`, quiz y `/glosario`.
+
 ## ESTADO – 24-nov-2026 (sesión 8, modo teoría)
 Prácticas completadas: sin cambios (P2 sigue 🟡; no se tocó el workspace).
 Lecciones cubiertas: sin cambios en coverage.md. Repaso Genie Chat vs Agent mode acertado (PDFs en Volume → Agent mode). Preguntas 18–20 del simulacro externo, todas acertadas (P18 tracing: `@mlflow.trace` + `mlflow.langchain.autolog()`, a la 2ª tras acertar solo A; P19 tools para datos vivos/dependientes del usuario; P20 `ResponsesAgent`).
